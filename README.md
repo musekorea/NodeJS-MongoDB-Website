@@ -1,1 +1,1 @@
-# A website that using Node.js Express and MongoDB
+# A website using Node.js Express and MongoDB
