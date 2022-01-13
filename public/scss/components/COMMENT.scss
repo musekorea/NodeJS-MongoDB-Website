@@ -1,0 +1,121 @@
+#commentDIV {
+  box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.2);
+  #commentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #commentToolBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      #replyBtn {
+        font-size: 25px;
+        margin: 0 10px;
+        color: gold;
+        cursor: pointer;
+      }
+      #commentToolEditBtn {
+        font-size: 25px;
+        color: tomato;
+        cursor: pointer;
+      }
+      #commentDeleteBtn {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#commentBody {
+  position: relative;
+
+  #editDIV {
+    form {
+      width: 350px;
+      display: flex;
+      justify-content: space-between;
+      input {
+        background-color: white;
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 10px 0 0 10px;
+        width: 100%;
+      }
+      button {
+        border: none;
+        outline: none;
+        background-color: tomato;
+        border-radius: 0 10px 10px 0;
+        padding: 0 5px;
+        color: white;
+      }
+    }
+  }
+}
+
+#replyDIV {
+  position: relative;
+  form {
+    width: 380px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    input {
+      background-color: lightblue;
+      border: none;
+      outline: none;
+      padding: 5px;
+      border-radius: 10px 0 0 10px;
+      width: 100%;
+    }
+    button {
+      border: none;
+      outline: none;
+      background-color: tomato;
+      border-radius: 0 10px 10px 0;
+      padding: 0 5px;
+      color: white;
+    }
+  }
+}
+
+#nestCommentWrapper {
+  width: 380px;
+  position: relative;
+
+  #nestCommentDIV {
+    box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 350px;
+    left: 30px;
+    border: 1px solid black;
+    background-color: rgba(143, 188, 143, 0.7);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    #nestHeader {
+      display: flex;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        width: 30px;
+        margin-right: 10px;
+      }
+      #time {
+        margin-left: 10px;
+      }
+      #nestCommentToolBox {
+        cursor: pointer;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+    #nestCommentBody {
+      padding: 0 10px 10px 10px;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <script defer src="/public/js/join.js"></script>
+    <title>Code:Me JOIN</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+
+    <div class="container">
+      <div class="join-wrapper">
+        <div><img id="avatarImage" src="" alt="" style="width: 50px" /></div>
+        <form action="/user/join" method="post" enctype="multipart/form-data">
+          <label for="email"
+            >Email
+            <span class="flash-error"
+              ><%=locals.messages.emailError%></span
+            ></label
+          ><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Write your email"
+            required
+          />
+          <label for="nickname"
+            >Nickname
+            <span class="flash-error"
+              ><%=locals.messages.nickNameError%></span
+            ></label
+          >
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            placeholder="Write your Nickname"
+            required
+          />
+          <label for="password"
+            >Password
+            <span class="flash-error"
+              ><%=locals.messages.passwordError%></span
+            ></label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password1"
+            required
+          />
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            placeholder="Password2"
+            required
+          />
+          <select name="gender" id="gender">
+            <option selected value="">Choose...</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <input type="file" id="avatar" name="avatar" accept="image/*" />
+          <input type="date" id="birth" name="birth" />
+          <input type="submit" id="submit" value="SUBMIT" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "Community",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "sass": "node-sass ./public/scss/styles.scss ./public/css/styles.css",
+    "sass-w": "node-sass -w ./public/scss/styles.scss ./public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musekorea/backend-community.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/musekorea/backend-community/issues"
+  },
+  "homepage": "https://github.com/musekorea/backend-community#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cross-fetch": "^3.1.4",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "mongodb": "^4.2.0",
+    "multer": "^1.4.4",
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "nodemon": "^2.0.15"
+  }
+}

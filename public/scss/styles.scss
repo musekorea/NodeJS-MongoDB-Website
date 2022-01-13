@@ -1,0 +1,22 @@
+/* ALL */
+@import './reset.scss';
+body {
+  position: relative;
+}
+.flash-error {
+  color: red;
+  font-weight: 800;
+}
+/* COMONENTS */
+@import './components/NAVBAR.scss';
+@import './components/POST.scss';
+@import './components/COMMENT.scss';
+@import './components/MODAL.scss';
+/* PAGES */
+@import './join.scss';
+@import './profile.scss';
+@import './community.scss';
+@import './writeArticle.scss';
+@import './editProfile.scss';
+@import './article.scss';
+@import './editArticle.scss';

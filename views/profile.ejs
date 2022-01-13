@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <title>Code:Me profile</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+      <h3><%=locals.user.nickname%>'s Profile</h3>
+      <%if(locals.user.avatarURL){%>
+      <img class="profile__avatar" src="<%=locals.user.avatarURL%>" alt="" />
+      <%}else{%>
+      <img class="profile__avatar" src="/public/images/nouser.png" alt="" />
+      <%}%>
+      <div class="profile__info">
+        <div class="innerBox">
+          <div class="sec">NICKNAME</div>
+          <div class="info"><%=locals.user.nickname%></div>
+        </div>
+        <div class="innerBox">
+          <div class="sec">EMAIL</div>
+          <div class="info"><%=locals.user.email%></div>
+        </div>
+        <div class="innerBox">
+          <div class="sec">BIRTH DAY</div>
+          <div class="info"><%=locals.user.birth%></div>
+        </div>
+        <div class="innerBox">
+          <div class="sec">GENDER</div>
+          <div class="info"><%=locals.user.gender%></div>
+        </div>
+        <div class="innerBox innerBox-last">
+          <div class="sec">PASSWORD</div>
+          <div class="info">INVISIBLE</div>
+        </div>
+      </div>
+      <%if(locals.isLoggedIn){%>
+      <a href="/user/editProfile"
+        ><button class="editProfileBtn">EDIT PROFILE</button>
+      </a>
+      <%}%>
+    </div>
+  </body>
+</html>

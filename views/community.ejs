@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <script defer src="/public/js/community.js"></script>
+    <title>Code:Me COMMUNITY</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+      <h2>Community</h2>
+      <div id="sortDIV">
+        sort by
+        <a href="#" id="sortNewA"><button id="sortNewBtn">New</button></a>
+        <a href="#" id="sortPopularA">
+          <button id="sortPopularBtn">Popular</button></a
+        >
+      </div>
+      <ul class="articleWrapper">
+        <%locals.datas.forEach((data)=>{ %> <%-
+        include("./components/POST.ejs",{data})%> <%})%>
+      </ul>
+      <div class="pagiNation" data-totalpage="<%=totalPage%>">
+        <ul>
+          <li id="prePageBtn">PREV</li>
+          <%for(let i=1;i<=totalPage;i++){%>
+          <a href="/community/community/<%=i%>"
+            ><li class="pageLI"><%=i%></li></a
+          >
+          <%}%>
+          <li id="nextPageBtn">NEXT</li>
+        </ul>
+        <%if(locals.isLoggedIn===true){%>
+        <a href="/community/writeArticle"><button>Write a Post</button></a>
+        <%}else{%>
+        <a href="/user/login"><button>Write a Post</button></a>
+        <%}%>
+      </div>
+    </div>
+  </body>
+</html>

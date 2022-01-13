@@ -1,0 +1,25 @@
+<div id="nestCommentWrapper" data-nestid="<%=nestComment.nestid%>">
+  <div id="nestCommentDIV">
+    <div id="nestHeader">
+      <div>
+        <a href="/user/profile/<%=nestComment.owner%>">
+          <%if(nestComment.avatarURL){%>
+          <img src="<%=nestComment.avatarURL%>" alt="" />
+          <%}else{%>
+          <img src="/public/images/nouser.png" alt="" />
+          <%}%>
+        </a>
+        <a href="/user/profile/<%=nestComment.owner%>"
+          ><span><%=nestComment.owner%></span></a
+        >
+        <span id="time"><%=nestComment.createdAt%></span>
+      </div>
+      <div id="nestCommentToolBox">
+        <%if(locals.user.nickname===nestComment.owner){%>
+        <span id="nestCommentDeleteBtn">✖</span>
+        <%}%>
+      </div>
+    </div>
+    <div id="nestCommentBody"><%=nestComment.content%></div>
+  </div>
+</div>

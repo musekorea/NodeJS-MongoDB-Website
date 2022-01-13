@@ -1,0 +1,60 @@
+<div class="navbar">
+  <div class="navbar__logo">
+    <!-- <i class="fab fa-accusoft"></i> -->
+    <img src="/public/images/favicon.png" alt="" />
+    <a href="/">CODE:ME</a>
+  </div>
+
+  <div class="navbar__menu">
+    <li><a href="">About</a></li>
+    <li><a href="/community/community/1">Community</a></li>
+    <%if(locals.isLoggedIn===false){%>
+    <li><a href="/user/login">Login</a></li>
+    <li><a href="/user/join">Join</a></li>
+    <%}%>
+  </div>
+
+  <div class="navbar__icons navButton">
+    <%if(locals.isLoggedIn){%>
+    <span id="avatarButton">
+      <%if(locals.user.avatarURL){%>
+      <img class="loginAvatarBtn" src="<%=locals.user.avatarURL%>" alt="" />
+      <%}else{%>
+      <img
+        class="loginAvatarBtn"
+        src="
+        /public/images/nouser.png"
+        alt=""
+      />
+      <%}%>
+      <span class="loginAvatarBtn"><%=locals.user.nickname%></span>
+    </span>
+
+    <%}else{%>
+    <span class="publicAvatarBtn" id="avatarButton">👽</span>
+    <%}%>
+    <a href="#"><i class="fas fa-bars"></i></a>
+  </div>
+
+  <div class="popupProfile">
+    <div class="profile">
+      <a href="/user/profile/<%=locals.user.nickname%>">
+        <%if(locals.user.avatarURL){%>
+        <img src="<%=locals.user.avatarURL%>" alt="" />
+        <%}else{%>
+        <img src="/public/images/nouser.png" alt="" />
+        <%}%>
+      </a>
+    </div>
+    <div class="menu">
+      <h4><%=locals.user.nickname%></h4>
+      <p><%=locals.user.email%></p>
+      <hr />
+      <ul>
+        <li>EDIT PROFILE</li>
+        <li><a href="/user/logout">LOGOUT</a></li>
+        <!--    <li><a href="/user/logout">LOGOUT<a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>

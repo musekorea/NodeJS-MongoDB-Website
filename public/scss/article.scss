@@ -1,0 +1,81 @@
+.container {
+  /* 여기 */
+  z-index: -1;
+}
+.article {
+  background-color: beige;
+  a {
+    color: gray;
+  }
+  #content {
+    margin-top: 12px;
+    white-space: pre;
+  }
+  #avatarBox {
+    position: relative;
+  }
+  #goodBtn,
+  #badBtn {
+    cursor: pointer;
+    &:hover {
+      background-color: brown;
+      border-radius: 50%;
+    }
+  }
+}
+#commentForm {
+  width: 380px;
+  textarea {
+    width: 100%;
+  }
+}
+
+#commentNumbers {
+  width: 380px;
+}
+
+#commentsContainer {
+  margin-top: 15px;
+  #commentDIV {
+    width: 380px;
+    border: 1px solid black;
+    background-color: rgba(70, 131, 180, 0.7);
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  #commentHeader {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    img {
+      width: 30px;
+      margin-right: 10px;
+    }
+    #time {
+      margin-left: 10px;
+    }
+  }
+  #commentBody {
+    padding: 0 10px 10px 10px;
+  }
+}
+.commentEditBtns {
+  #editBtn {
+    border: none;
+    outline: none;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    cursor: pointer;
+  }
+  #commentBtn {
+    border: none;
+    outline: none;
+    padding: 7px;
+    border-radius: 10px;
+    background-color: crimson;
+    color: white;
+    cursor: pointer;
+  }
+}

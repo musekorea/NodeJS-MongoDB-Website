@@ -1,0 +1,40 @@
+#sortDIV {
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.pagiNation {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  ul {
+    list-style: none;
+    border-radius: 10px;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+    a {
+      color: black;
+    }
+    li {
+      padding: 7px;
+      cursor: pointer;
+      background: lightblue;
+    }
+    .pageLI {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+  button {
+    border: none;
+    outline: none;
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <script defer src="/public/js/editProfile.js"></script>
+    <title>Code:Me editProfile</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+      <div class="editProfile-wrapper">
+        <div class="avatarImage">
+          <img
+            id="avatarImage"
+            src="<%=locals.user.avatarURL%>"
+            alt=""
+          />
+        </div>
+        <form
+          action="/user/editProfile"
+          method="post"
+          enctype="multipart/form-data"
+        >
+        <div>
+          <p><%=locals.messages.emailError%></p>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Write your email"
+            value="<%=locals.user.email%>"
+            required
+          />
+          <p><%=locals.messages.nickNameError%></p>
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            placeholder="Write your Nickname"
+            value="<%=locals.user.nickname%>"
+            required
+          />
+        </div>
+          <input type="file" id="avatar" name="avatar" accept="image/*" />
+       <div>
+          <select name="gender" id="gender">
+            <option <%=locals.user.gender===""?"selected":""%> value="">Choose...</option>
+            <option <%=locals.user.gender==="male"?"selected":""%> value="male">Male</option>
+            <option <%=locals.user.gender==="female"?"selected":""%> value="female">Female</option>
+          </select>
+          <input
+            type="date"
+            id="birth"
+            name="birth"
+            value="<%=locals.user.birth%>"
+          />
+          <%if(locals.user.socialOnly===false){%>
+          <div>
+            <%=locals.messages.passwordError%>
+            <label for="password">Plese Confirm Password</label><br>
+            <input type="password" id="password" name="password" placeholder="Plese Confirm Password">
+          </div>
+          <%}%>
+      </div>
+          <input type="submit" id="submit" value="UPDATE PROFILE" />
+        </form>
+        <a href="/user/changePassword">
+        <button>Change Password</button>
+      </a>
+      </div>
+    </div>
+  </body>
+</html>

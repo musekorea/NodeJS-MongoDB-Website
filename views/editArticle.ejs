@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <script defer src="/public/js/editArticle.js"></script>
+    <title>Code:Me HOME</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+      <form action="" data-id="<%=locals.data._id%>">
+        <div class="editArticleWrapper">
+          <input type="text" value="<%=locals.data.title%>" />
+          <textarea id="content" name="content" rows="5" required>
+<%=locals.data.content%></textarea
+          >
+          <div>
+            <button>Submit</button>
+            <button id="deleteBtn">Delete Post</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

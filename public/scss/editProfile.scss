@@ -1,0 +1,44 @@
+.editProfile-wrapper {
+  display: flex;
+  flex-direction: column;
+  .avatarImage {
+    border-radius: 30px;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  #avatarImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 16px;
+  }
+  #avatar {
+    padding: 0;
+  }
+  ::-webkit-file-upload-button {
+    border: none;
+    color: white;
+    background-color: gray;
+    padding: 11px 10px;
+    outline: none;
+  }
+  ::-webkit-file-upload-button:hover {
+    background-color: tomato;
+  }
+  #gender {
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 9.8px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}

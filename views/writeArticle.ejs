@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <title>Code:Me Write a POST</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+      <h2>Write a post</h2>
+      <form action="/community/writeArticle" method="POST">
+        <div class="formWrapper">
+          <label for="title"><h5>TITLE</h5> </label>
+          <input id="title" name="title" type="text" required />
+          <label for="content"><h5>Content</h5> </label>
+          <textarea id="content" name="content" rows="5" required></textarea>
+          <button>SUBMIT</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

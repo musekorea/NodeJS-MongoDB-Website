@@ -1,0 +1,23 @@
+<a href="/community/article/<%=data._id%>">
+  <li class="article">
+    <h3><%=data.title%></h3>
+    <div>
+      by<span> <%=locals.data.owner%></span>
+      <span><%=locals.data.time%></span>
+      💬<span
+        ><%if(data.comments){%> <%=data.comments.length+data.nestNumbers%>
+        <%}else{%> 0 <%}%>
+      </span>
+      👍<span><%=locals.data.good%></span> 👎<span><%=locals.data.bad%></span>
+      👀<span><%=locals.data.views%></span>
+      views
+      <div id="avatarBox">
+        <%if(data.avatarURL){%>
+        <img src="<%=data.avatarURL%>" alt="" />
+        <%}else{%>
+        <img src="/public/images/nouser.png" alt="" />
+        <%}%>
+      </div>
+    </div>
+  </li>
+</a>

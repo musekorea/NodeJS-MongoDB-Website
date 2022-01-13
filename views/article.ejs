@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <script defer src="/public/js/article.js"></script>
+    <title>Code:Me Article</title>
+  </head>
+  <body>
+    <span id="userData" data-loginstate="<%=locals.isLoggedIn%>" data-avatar="<%=locals.user.avatarURL%>" data-owner="<%=locals.user.nickname%>" data-createdat="<%=locals.user.createdAt%>"></span>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+        <li class="article" data-id="<%=data._id%>">
+          <h3><%=data.title%></h3>
+          <div>
+            by<span><a href="/user/profile/<%=data.owner%>"> <%=locals.data.owner%></span></a> <span><%=locals.data.time%></span> 
+            💬<span id="articleCommentNumberSpan"><%=locals.totalCommentNumber%></span> <span id="goodBtn" di>👍</span> <span id="goodNum"><%=locals.data.good%></span>   <span id="badBtn">👎</span><span id="badNum"><%=locals.data.bad%></span> 👀<span><%=locals.data.views%></span> views
+            <div id="avatarBox"> <a href="/user/profile/<%=data.owner%>"> <%if(data.avatarURL){%>
+              <img src="<%=data.avatarURL%>" alt="" />
+              <%}else{%>
+              <img src="/public/images/nouser.png" alt="" />
+              <%}%></a></div>
+            <p id="content"><%=data.content%></p>
+          </div>
+        </li>
+        <!-- Add Comments Form -->
+        <form action="#" id="commentForm" method="post">
+          <textarea name="commentInput" id="commentInput" placeholder="Leave a comment here" required></textarea>
+          <div><button id="writeCommentBtn">Write a comment</button>
+            <button id="cancelBtn">Cancel</button></div>
+        </form>
+        <!-- Add Comments Form -->
+        <%if(locals.user.nickname===locals.data.owner){%>
+        <div class="commentEditBtns">
+          <button id="editBtn">Edit Post</button>
+          <button id="commentBtn">Add Comment</button>
+        </div>
+        <%}else if(locals.isLoggedIn){%>
+          <button id="commentBtn" class="commentEditBtns">Add Comment</button>
+          <%}else{%>
+            <a href="/user/login"><button id="commentBtn" class="commentEditBtns">Add Comment</button></a> 
+          <%}%>
+          <%if(locals.totalCommentNumber>1){%>
+          <p id="commentNumbers"><span id="commentNumberSpan"><%=locals.totalCommentNumber%></span> comments</p>
+          <%}else{%>
+            <p id="commentNumbers"><span id="commentNumberSpan"><%=locals.totalCommentNumber%></span> comment</p>
+          <%}%>
+          <!-- comments container -->
+          <div id="commentsContainer">
+            <%locals.comments.forEach((comment)=>{%>
+              <div id="commentWrapper" data-commentid="<%=comment._id%>">
+              <%- include("./components/COMMENT.ejs",{comment})%>
+              <%if(comment.nestComments){%>
+              <%comment.nestComments.forEach((nestComment)=>{%>
+                <%- include("./components/NESTCOMMENT.ejs", {nestComment})%>
+              <%})%>
+              <%}%>
+              <span></span>
+            </div>
+            <%})%>
+          </div>
+          <!-- comments container -->
+    </div>
+  </body>
+</html>

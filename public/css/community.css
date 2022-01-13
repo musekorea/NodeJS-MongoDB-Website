@@ -1,0 +1,13 @@
+/* COMMUNITY */
+.articleWrapper {
+  width: 80%; }
+
+.article {
+  border: 1px solid black;
+  list-style: none;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.2);
+  color: black; }

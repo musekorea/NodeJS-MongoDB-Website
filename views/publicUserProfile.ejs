@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./components/HEAD.ejs")%>
+    <title>Code:Me profile</title>
+  </head>
+  <body>
+    <%- include("./components/NAVBAR.ejs") %>
+    <div class="container">
+      <h3><%=locals.publicUser.nickname%>'s Profile</h3>
+      <%if(locals.publicUser.avatarURL){%>
+      <img
+        class="profile__avatar"
+        src="<%=locals.publicUser.avatarURL%>"
+        alt=""
+      />
+      <%}else{%>
+      <img class="profile__avatar" src="/public/images/nouser.png" alt="" />
+      <%}%>
+      <div class="profile__info">
+        <div class="innerBox">
+          <div class="sec">NICKNAME</div>
+          <div class="info"><%=locals.publicUser.nickname%></div>
+        </div>
+        <div class="innerBox">
+          <div class="sec">EMAIL</div>
+          <div class="info"><%=locals.publicUser.email%></div>
+        </div>
+        <div class="innerBox">
+          <div class="sec">BIRTH DAY</div>
+          <div class="info"><%=locals.publicUser.birth%></div>
+        </div>
+        <div class="innerBox">
+          <div class="sec">GENDER</div>
+          <div class="info"><%=locals.publicUser.gender%></div>
+        </div>
+        <div class="innerBox innerBox-last">
+          <div class="sec">PASSWORD</div>
+          <div class="info">INVISIBLE</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
